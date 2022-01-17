@@ -21,21 +21,21 @@ afficherLesJoueurs();
 comparerAgeDesDeuxJoueurs();
 
 function afficherLesJoueurs() {
-  console.log("-----------------------");
+  ligneDeSeparation();
 
   console.log(`Le Nom du joueur 1 : ${nomJoueur1}`);
   console.log(`Âge du joueur 1 : ${ageDuJoueur1}`);
 
   afficherGenreJoueur(estUnHommeJoueur1);
 
-  console.log("-----------------------");
+  ligneDeSeparation();
 
   console.log("%s est le Nom du joueur 2", nomJoueur2);
   console.log("%d ans est l'âge de %s ", ageDuJoueur2, nomJoueur2);
 
   afficherGenreJoueur(estUnHommeJoueur2);
 
-  console.log("-----------------------");
+  ligneDeSeparation();
 }
 
 function comparerAgeDesDeuxJoueurs() {
@@ -54,4 +54,12 @@ function afficherGenreJoueur(bool) {
   } else {
     console.log("Le joueur est une femme");
   }
+}
+
+function ligneDeSeparation() {
+  let ligneSeparationText = "";
+  for (let i = 0; i < 30; i++) {
+    ligneSeparationText += "-";
+  }
+  console.log(ligneSeparationText);
 }
