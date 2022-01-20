@@ -2,43 +2,46 @@
  * Variables
  */
 const nomJoueur1 = "Tom";
-const ageDuJoueur1 = 25;
+const ageDuJoueur1 = 35;
 const estUnHommeJoueur1 = true;
 
 const nomJoueur2 = "Léa";
 const ageDuJoueur2 = 25;
 const estUnHommeJoueur2 = false;
 
+const SEPARATEUR = "*";
+
 /**
  * Main
  */
+afficherLesJoueurs();
+AffichercomparaisonAgeDesDeuxJoueurs();
+ligneDeSeparation(SEPARATEUR);
+afficherDifferenceAgeJoueurs();
+ligneDeSeparation(SEPARATEUR);
 
 /**
  * Functions
  */
-
-afficherLesJoueurs();
-comparerAgeDesDeuxJoueurs();
-
 function afficherLesJoueurs() {
-  ligneDeSeparation();
+  ligneDeSeparation(SEPARATEUR);
 
   console.log(`Le Nom du joueur 1 : ${nomJoueur1}`);
   console.log(`Âge du joueur 1 : ${ageDuJoueur1}`);
 
   afficherGenreJoueur(estUnHommeJoueur1);
 
-  ligneDeSeparation();
+  ligneDeSeparation(SEPARATEUR);
 
   console.log("%s est le Nom du joueur 2", nomJoueur2);
   console.log("%d ans est l'âge de %s ", ageDuJoueur2, nomJoueur2);
 
   afficherGenreJoueur(estUnHommeJoueur2);
 
-  ligneDeSeparation();
+  ligneDeSeparation(SEPARATEUR);
 }
 
-function comparerAgeDesDeuxJoueurs() {
+function AffichercomparaisonAgeDesDeuxJoueurs() {
   if (ageDuJoueur1 > ageDuJoueur2) {
     console.log("Le joueur 1 est le plus âgé");
   } else if (ageDuJoueur2 > ageDuJoueur1) {
@@ -56,10 +59,25 @@ function afficherGenreJoueur(bool) {
   }
 }
 
-function ligneDeSeparation() {
+function ligneDeSeparation(toto) {
   let ligneSeparationText = "";
   for (let i = 0; i < 30; i++) {
-    ligneSeparationText += "-";
+    ligneSeparationText += toto;
   }
   console.log(ligneSeparationText);
+}
+
+function calculDifferenceAgeJoueurs() {
+  let differenceAge = ageDuJoueur1 - ageDuJoueur2;
+  if (differenceAge < 0) {
+    differenceAge = -differenceAge;
+  }
+  return differenceAge;
+}
+
+function afficherDifferenceAgeJoueurs() {
+  const differenceAgeJoueurs = calculDifferenceAgeJoueurs();
+  console.log(
+    `La différence d'âge entre les 2 joueurs est de ${differenceAgeJoueurs} ans.`
+  );
 }
