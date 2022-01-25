@@ -14,19 +14,46 @@ const SEPARATEUR = "*";
 /**
  * Main
  */
-ligneDeSeparation(SEPARATEUR);
-afficherLeJoueur1();
-ligneDeSeparation(SEPARATEUR);
-afficherLeJoueur2();
-ligneDeSeparation(SEPARATEUR);
-AffichercomparaisonAgeDesDeuxJoueurs();
-ligneDeSeparation(SEPARATEUR);
-afficherDifferenceAgeJoueurs();
-ligneDeSeparation(SEPARATEUR);
+afficherMenu();
+const choixMenu = 9;
+switch (choixMenu) {
+  case 1:
+    ligneDeSeparation(SEPARATEUR);
+    afficherLeJoueur1();
+    ligneDeSeparation(SEPARATEUR);
+    afficherLeJoueur2();
+    ligneDeSeparation(SEPARATEUR);
+    break;
+  case 2:
+    ligneDeSeparation(SEPARATEUR);
+    AffichercomparaisonAgeDesDeuxJoueurs();
+    ligneDeSeparation(SEPARATEUR);
+    break;
+  case 3:
+    ligneDeSeparation(SEPARATEUR);
+    afficherDifferenceAgeJoueurs();
+    ligneDeSeparation(SEPARATEUR);
+    break;
+  case 9:
+    console.log("À bientôt");
+    break;
+  default:
+    console.log("Choix non traité");
+    break;
+}
 
 /**
  * Functions
  */
+
+function afficherMenu() {
+  let textMenu = "";
+  textMenu += "1 - Afficher les joueurs\n";
+  textMenu += "2 - Comparer les 2 joueurs\n";
+  textMenu += "3 - Calculer la différence d'âge\n";
+  textMenu += "9 - Quitter\n";
+  console.log(textMenu);
+}
 
 function afficherLeJoueur1() {
   console.log(`Le Nom du joueur 1 : ${nomJoueur1}`);
