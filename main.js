@@ -14,7 +14,11 @@ const SEPARATEUR = "*";
 /**
  * Main
  */
-afficherLesJoueurs();
+ligneDeSeparation(SEPARATEUR);
+afficherLeJoueur1();
+ligneDeSeparation(SEPARATEUR);
+afficherLeJoueur2();
+ligneDeSeparation(SEPARATEUR);
 AffichercomparaisonAgeDesDeuxJoueurs();
 ligneDeSeparation(SEPARATEUR);
 afficherDifferenceAgeJoueurs();
@@ -23,22 +27,17 @@ ligneDeSeparation(SEPARATEUR);
 /**
  * Functions
  */
-function afficherLesJoueurs() {
-  ligneDeSeparation(SEPARATEUR);
 
+function afficherLeJoueur1() {
   console.log(`Le Nom du joueur 1 : ${nomJoueur1}`);
   console.log(`Âge du joueur 1 : ${ageDuJoueur1}`);
-
   afficherGenreJoueur(estUnHommeJoueur1);
+}
 
-  ligneDeSeparation(SEPARATEUR);
-
+function afficherLeJoueur2() {
   console.log("%s est le Nom du joueur 2", nomJoueur2);
   console.log("%d ans est l'âge de %s ", ageDuJoueur2, nomJoueur2);
-
   afficherGenreJoueur(estUnHommeJoueur2);
-
-  ligneDeSeparation(SEPARATEUR);
 }
 
 function AffichercomparaisonAgeDesDeuxJoueurs() {
