@@ -23,21 +23,13 @@ while (choixMenu !== 9) {
   choixMenu = parseInt(readline.question("Quel est votre choix ? "));
   switch (choixMenu) {
     case 1:
-      ligneDeSeparation(SEPARATEUR);
-      afficherLeJoueur1();
-      ligneDeSeparation(SEPARATEUR);
-      afficherLeJoueur2();
-      ligneDeSeparation(SEPARATEUR);
+      afficherLesJoueursDuJeu();
       break;
     case 2:
-      ligneDeSeparation(SEPARATEUR);
       AffichercomparaisonAgeDesDeuxJoueurs();
-      ligneDeSeparation(SEPARATEUR);
       break;
     case 3:
-      ligneDeSeparation(SEPARATEUR);
       afficherDifferenceAgeJoueurs();
-      ligneDeSeparation(SEPARATEUR);
       break;
     case 9:
       console.log("À bientôt");
@@ -61,6 +53,14 @@ function afficherMenu() {
   console.log(textMenu);
 }
 
+function afficherLesJoueursDuJeu() {
+  ligneDeSeparation(SEPARATEUR);
+  afficherLeJoueur1();
+  ligneDeSeparation(SEPARATEUR);
+  afficherLeJoueur2();
+  ligneDeSeparation(SEPARATEUR);
+}
+
 function afficherLeJoueur1() {
   console.log(`Le Nom du joueur 1 : ${nomJoueur1}`);
   console.log(`Âge du joueur 1 : ${ageDuJoueur1}`);
@@ -74,6 +74,7 @@ function afficherLeJoueur2() {
 }
 
 function AffichercomparaisonAgeDesDeuxJoueurs() {
+  ligneDeSeparation(SEPARATEUR);
   if (ageDuJoueur1 > ageDuJoueur2) {
     console.log("Le joueur 1 est le plus âgé");
   } else if (ageDuJoueur2 > ageDuJoueur1) {
@@ -108,8 +109,10 @@ function calculDifferenceAgeJoueurs() {
 }
 
 function afficherDifferenceAgeJoueurs() {
+  ligneDeSeparation(SEPARATEUR);
   const differenceAgeJoueurs = calculDifferenceAgeJoueurs();
   console.log(
     `La différence d'âge entre les 2 joueurs est de ${differenceAgeJoueurs} ans.`
   );
+  ligneDeSeparation(SEPARATEUR);
 }
