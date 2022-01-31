@@ -20,7 +20,7 @@ let choixMenu = 0;
 
 while (choixMenu !== 9) {
   afficherMenu();
-  choixMenu = parseInt(readline.question("Quel est votre choix ? "));
+  choixMenu = saisirEntierQuestion("Quel est votre question ? ");
   switch (choixMenu) {
     case 1:
       afficherLesJoueursDuJeu();
@@ -51,6 +51,10 @@ function afficherMenu() {
   textMenu += "3 - Calculer la différence d'âge\n";
   textMenu += "9 - Quitter\n";
   console.log(textMenu);
+}
+
+function saisirEntierQuestion(question) {
+  return parseInt(readline.question(question));
 }
 
 function afficherLesJoueursDuJeu() {
